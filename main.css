@@ -3,8 +3,8 @@
 
 /* VARIABLES */
 :root {
-    --background-primary: hsl(0, 0%, 1%);
-    --link-color: #fff;
+    --background-primary: hsl(0, 0%, 100%);
+    --link-color: #232323;
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -20,23 +20,19 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 a {
     text-decoration: none;
-    color: #fff;
+    color: #232323;
 }
 
 li {
     list-style: none;
 }
 
-/* SIDEBAR */
 body {
     display: grid;
+    padding: 0;
+    margin: 0;
     font-family: var(--font-family);
     grid-template-columns: 300px 1fr;
     grid-template-rows: auto 1fr;
@@ -45,11 +41,21 @@ body {
         'sidebar main';
 }
 
+input {
+    outline: none;
+    border: 2px solid hsl(0, 0%, 14%);
+    padding: 1rem 2rem;
+    width: 800px;
+}
+
+/* SIDEBAR */
 .sidebar {
     display: grid;
     background-color: var(--background-primary);
     color: var(--link-color);
     height: 100vh;
+    border-right: 2px solid hsl(0, 0%, 14%);
+    box-shadow: 1px 1px 0 0 hsla(0, 0%, 14%, 0.24);
 }
 
 .sidebar__logo {
@@ -61,12 +67,12 @@ body {
 }
 
 .sidebar__logo i {
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 
 .sidebar__logo h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .shortcuts__menu,
@@ -82,18 +88,70 @@ body {
 .settings__link {
     display: flex;
     gap: 0.8rem;
-    font-size: 1.4rem;
-    padding: 0 1rem;
+    font-size: 1.2rem;
+    padding: 0 2.5rem;
     font-weight: bold;
     transition: color 0.4s ease-in;
 }
 
 .shortcuts__link:hover,
 .settings__link:hover {
-    color: #6aa1d2;
+    color: #e6c53e;
 }
 
 .shortcuts__link i,
 .settings__link i {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+}
+
+/* NAV */
+.header {
+    padding: 2rem 3rem;
+    border-bottom: 2px solid hsl(0, 0%, 14%);
+    height: 8rem;
+}
+
+.search {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.search i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items__nav {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.items__nav i {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.items__nav img {
+    width: 35x;
+    height: 35px;
+    align-self: center;
+    border-radius: 50%;
+    margin: 0 2rem;
+    cursor: pointer;
+}
+
+.items__nav h1 {
+    font-size: 1.4rem;
+    cursor: pointer;
 }
